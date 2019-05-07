@@ -1,6 +1,6 @@
 {
   "name": "metafilm",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Getting metadata information about films and TV shows (title, actors, genres, etc.) from IMDb, TMDb, Kinopoisk, Douban",
   "keywords": [
     "api",
@@ -55,7 +55,8 @@
     "actor",
     "actors",
     "director",
-    "directors"
+    "directors",
+    "gulfstream"
   ],
   "license": "MIT",
   "scripts": {
@@ -70,16 +71,17 @@
   },
   "homepage": "https://gulfstream.to",
   "dependencies": {
-    "string-similarity": "latest",
-    "transliteration": "latest",
-    "microdata-node": "latest",
-    "iconv-lite": "latest",
-    "colage": "latest",
-    "jsdom": "latest",
-    "axios": "latest",
-    "ajv": "latest"
+    "string-similarity": "3.0.0",
+    "transliteration": "2.1.3",
+    "microdata-node": "1.0.0",
+    "downloading": "0.0.1",
+    "iconv-lite": "0.4.24",
+    "colage": "0.0.1",
+    "jsdom": "14.0.0",
+    "axios": "0.18.0",
+    "ajv": "6.10.0"
   },
   "devDependencies": {
-    "mocha": "latest"
+    "mocha": "^6.1.4"
   }
 }

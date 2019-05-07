@@ -399,6 +399,8 @@ console.log(en_genres);  //=> [ 'comedy', 'musical', 'action' ]
 }
 ```
 
+> To display the progress bar, use the parameter `progress: true` (only for CLI)
+
 **Example:**
 
 ```json
