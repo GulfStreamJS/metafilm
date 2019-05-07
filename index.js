@@ -7,8 +7,35 @@
  * @return {Object}
  */
 
+module.exports = (id, season, key) => {
+    if (!id) return Promise.resolve(null);
+    let params = input(id, season, key);
+    if (!params) return Promise.resolve(null);
+    params.progress = true;
+    return Promise.resolve(params)
+        .then(require('./lib/1_missing'))
+        .then(require('./lib/2_urls'))
+        .then(require('./lib/3_raw'))
+        .then(require('./lib/4_processed'))
+        .then(require('./lib/5_output'))
+        .then(require('./lib/6_validation'))
+};
+
 module.exports.id = (id, season, key) => {
     if (!id) return Promise.resolve(null);
+    let params = input(id, season, key);
+    if (!params) return Promise.resolve(null);
+    return Promise.resolve(params)
+        .then(require('./lib/1_missing'))
+        .then(require('./lib/2_urls'))
+        .then(require('./lib/3_raw'))
+        .then(require('./lib/4_processed'))
+        .then(require('./lib/5_output'))
+        .then(require('./lib/6_validation'))
+};
+
+const input = (id, season, key) => {
+    if (!id) return null;
 
     let params = {};
 
@@ -85,15 +112,10 @@ module.exports.id = (id, season, key) => {
                 params[i] = id[i];
             }
         });
-    } else {
-        return Promise.resolve(null);
+    }
+    else {
+        return null;
     }
 
-    return Promise.resolve(params)
-        .then(require('./lib/1_missing'))
-        .then(require('./lib/2_urls'))
-        .then(require('./lib/3_raw'))
-        .then(require('./lib/4_processed'))
-        .then(require('./lib/5_output'))
-        .then(require('./lib/6_validation'))
+    return params;
 };

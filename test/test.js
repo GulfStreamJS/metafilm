@@ -2,7 +2,7 @@ const metafilm = require('../');
 
 describe('Movies', function() {
     describe('#id()', function() {
-        this.timeout(20000);
+        this.timeout(30000);
         it('get data ID 1047883 from kinopoisk.ru', function (done) {
             metafilm.id({
                 "kp_id": "1047883",
@@ -670,7 +670,7 @@ describe('Movies', function() {
 
 describe('TV Series', function() {
     describe('#id()', function() {
-        this.timeout(20000);
+        this.timeout(30000);
         it('get data ID 1167154 from kinopoisk.ru', function (done) {
             metafilm.id({
                 "kp_id": "1167154",
