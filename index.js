@@ -11,7 +11,7 @@ module.exports = (id, season, key) => {
     if (!id) return Promise.resolve(null);
     let params = input(id, season, key);
     if (!params) return Promise.resolve(null);
-    params.progress = true;
+    params.gs = true;
     return Promise.resolve(params)
         .then(require('./lib/1_missing'))
         .then(require('./lib/2_urls'))

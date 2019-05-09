@@ -1,6 +1,6 @@
 {
   "name": "metafilm",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Getting metadata information about films and TV shows (title, actors, genres, etc.) from IMDb, TMDb, Kinopoisk, Douban",
   "keywords": [
     "api",
@@ -82,6 +82,6 @@
     "ajv": "6.10.0"
   },
   "devDependencies": {
-    "mocha": "^6.1.4"
+    "mocha": "6.1.4"
   }
 }
