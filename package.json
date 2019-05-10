@@ -1,6 +1,6 @@
 {
   "name": "metafilm",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Getting metadata information about films and TV shows (title, actors, genres, etc.) from IMDb, TMDb, Kinopoisk, Douban",
   "keywords": [
     "api",
