@@ -6,6 +6,7 @@ describe('Movies', function() {
         it('get data ID 1047883 from kinopoisk.ru', function (done) {
             metafilm.id({
                 "kp_id": "1047883",
+                "debug": "kp_id_1047883",
                 "cookie": {"kp": [
                     {
                         "domain": ".kinopoisk.ru",
@@ -352,12 +353,16 @@ describe('Movies', function() {
                 if (movie.year === 2019) return done();
                 else return done('Not Found!');
             }).catch(error => {
+                if (error && error.errors && error.errors.length) {
+                    return done(error.errors.map(e => e.message).join(' | '));
+                }
                 return done(error);
             });
         });
         it('get data ID 26662282 from movie.douban.com', function (done) {
             metafilm.id({
                 "douban_id": "26662282",
+                "debug": "douban_id_26662282",
                 "cookie": {"douban": [
                     {
                         "domain": ".douban.com",
@@ -460,23 +465,31 @@ describe('Movies', function() {
                 if (movie.year === 2019) return done();
                 else return done('Not Found!');
             }).catch(error => {
+                if (error && error.errors && error.errors.length) {
+                    return done(error.errors.map(e => e.message).join(' | '));
+                }
                 return done(error);
             });
         });
         it('get data ID 299534 from themoviedb.org', function (done) {
             metafilm.id({
                 "tmdb_key": "e547e17d4e91f3e62a571655cd1ccaff",
-                "tmdb_id": "299534"
+                "tmdb_id": "299534",
+                "debug": "tmdb_id_299534"
             }).then(movie => {
                 if (movie.year === 2019) return done();
                 else return done('Not Found!');
             }).catch(error => {
+                if (error && error.errors && error.errors.length) {
+                    return done(error.errors.map(e => e.message).join(' | '));
+                }
                 return done(error);
             });
         });
         it('get data ID 6146586 from imdb.com', function (done) {
             metafilm.id({
                 "imdb_id": "6146586",
+                "debug": "imdb_id_6146586",
                 "cookie": {"imdb": [
                     {
                         "domain": ".imdb.com",
@@ -651,17 +664,24 @@ describe('Movies', function() {
                 if (movie.year === 2019) return done();
                 else return done('Not Found!');
             }).catch(error => {
+                if (error && error.errors && error.errors.length) {
+                    return done(error.errors.map(e => e.message).join(' | '));
+                }
                 return done(error);
             });
         });
         it('get data ID 5884052 from omdbapi.com', function (done) {
             metafilm.id({
                 "imdb_key": "966c4f4f",
-                "imdb_id": "5884052"
+                "imdb_id": "5884052",
+                "debug": "imdb_id_5884052"
             }).then(movie => {
                 if (movie.year === 2019) return done();
                 else return done('Not Found!');
             }).catch(error => {
+                if (error && error.errors && error.errors.length) {
+                    return done(error.errors.map(e => e.message).join(' | '));
+                }
                 return done(error);
             });
         });
@@ -675,6 +695,7 @@ describe('TV Series', function() {
             metafilm.id({
                 "kp_id": "1167154",
                 "season": 1,
+                "debug": "kp_id_1167154",
                 "cookie": {"kp": [
                         {
                             "domain": ".kinopoisk.ru",
@@ -1021,6 +1042,9 @@ describe('TV Series', function() {
                 if (tv.year === 2019) return done();
                 else return done('Not Found!');
             }).catch(error => {
+                if (error && error.errors && error.errors.length) {
+                    return done(error.errors.map(e => e.message).join(' | '));
+                }
                 return done(error);
             });
         });
@@ -1028,6 +1052,7 @@ describe('TV Series', function() {
             metafilm.id({
                 "douban_id": "27594217",
                 "season": 1,
+                "debug": "douban_id_27594217",
                 "cookie": {"douban": [
                         {
                             "domain": ".douban.com",
@@ -1130,6 +1155,9 @@ describe('TV Series', function() {
                 if (tv.year === 2019) return done();
                 else return done('Not Found!');
             }).catch(error => {
+                if (error && error.errors && error.errors.length) {
+                    return done(error.errors.map(e => e.message).join(' | '));
+                }
                 return done(error);
             });
         });
@@ -1137,11 +1165,15 @@ describe('TV Series', function() {
             metafilm.id({
                 "tmdb_key": "e547e17d4e91f3e62a571655cd1ccaff",
                 "tmdb_id": "82883",
-                "season": 1
+                "season": 1,
+                "debug": "tmdb_id_82883"
             }).then(tv => {
                 if (tv.year === 2019) return done();
                 else return done('Not Found!');
             }).catch(error => {
+                if (error && error.errors && error.errors.length) {
+                    return done(error.errors.map(e => e.message).join(' | '));
+                }
                 return done(error);
             });
         });
@@ -1149,6 +1181,7 @@ describe('TV Series', function() {
             metafilm.id({
                 "imdb_id": "9561862",
                 "season": 1,
+                "debug": "imdb_id_9561862",
                 "cookie": {"imdb": [
                         {
                             "domain": ".imdb.com",
@@ -1323,6 +1356,9 @@ describe('TV Series', function() {
                 if (tv.year === 2019) return done();
                 else return done('Not Found!');
             }).catch(error => {
+                if (error && error.errors && error.errors.length) {
+                    return done(error.errors.map(e => e.message).join(' | '));
+                }
                 return done(error);
             });
         });
@@ -1330,11 +1366,15 @@ describe('TV Series', function() {
             metafilm.id({
                 "imdb_key": "966c4f4f",
                 "imdb_id": "9253866",
-                "season": 1
+                "season": 1,
+                "debug": "imdb_id_9253866"
             }).then(tv => {
                 if (tv.year === 2019) return done();
                 else return done('Not Found!');
             }).catch(error => {
+                if (error && error.errors && error.errors.length) {
+                    return done(error.errors.map(e => e.message).join(' | '));
+                }
                 return done(error);
             });
         });

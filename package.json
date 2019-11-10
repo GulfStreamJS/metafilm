@@ -1,6 +1,6 @@
 {
   "name": "metafilm",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Getting metadata information about films and TV shows (title, actors, genres, etc.) from IMDb, TMDb, Kinopoisk, Douban",
   "keywords": [
     "api",
@@ -29,11 +29,13 @@
     "kinopoisk",
     "kp",
     "douban",
+    "tvmaze",
     "imdb id",
     "tmdb id",
     "themoviedb id",
     "kinopoisk id",
     "douban id",
+    "tvmaze id",
     "imdb parser",
     "tmdb parser",
     "themoviedb parser",
@@ -76,7 +78,7 @@
     "microdata-node": "1.0.0",
     "downloading": "0.0.1",
     "iconv-lite": "0.4.24",
-    "colage": "0.0.1",
+    "colage": "0.2.0",
     "jsdom": "14.0.0",
     "axios": "0.18.0",
     "ajv": "6.10.0"
